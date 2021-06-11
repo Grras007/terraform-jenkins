@@ -39,9 +39,9 @@
   - name: Terraform apply
     community.general.terraform:
        project_path: 'terraform/'
- #     plan_file: test.tfplan
+       plan_file: test.tfplan
        lock: true
        state: present
     tags:
       - apply
-     # workspace: default
+    workspace: default
