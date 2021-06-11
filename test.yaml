@@ -1,0 +1,42 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Terraform Initialization
+    community.general.terraform:
+       project_path: 'terraform/'
+       state: planned
+       plan_file: test.tfplan
+       #     state_file:
+       #     - https://yogi-ntt.s3.us-west-1.amazonaws.com/terraform-test.tfstate
+       force_init: true
+       lock: true
+       backend_config:
+          region: "us-west-1"
+          bucket: "yogi-ntt"
+          key: terraform-test.tfstate
+       #       backend_config_files:
+       #       - /etc/ansible/terraform/backend.tf
+       variables_files:
+               - /etc/ansible/terraform/terraform.tfvars
+    tags:
+      - init          
+# - name: Set Variables
+  # community.general.terraform:
+        #  project_path: 'terraform/'
+   #       plan_file: test.tfplan
+ #         lock: true
+ #         state: planned
+# - name:  Set variables
+  # community.general.terraform:
+   #   project_path: 'terraform/'
+   #       variables_files:
+   #          - /etc/ansible/terraform/terraform.tfvars
+                # tags:
+                #  - variable            #              - /etc/ansible/terraform/variables.tf
+  - name: Terraform apply
+    community.general.terraform:
+       project_path: 'terraform/'
+ #     plan_file: test.tfplan
+       lock: true
+       state: present
+     # workspace: default
