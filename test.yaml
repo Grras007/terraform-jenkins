@@ -44,5 +44,16 @@
        plan_file: test.tfplan
        lock: true
        state: present
-    tags:
+    :wq!tags:
       - apply
+  - name: Terraform apply with Existing TF-Plan
+    community.general.terraform:
+       project_path: 'terraform/'
+       plan_file:
+           - demo.tfplan
+       lock: true
+       state: present
+    tags:
+      - tfplan
+
+
