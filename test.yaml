@@ -12,7 +12,7 @@
        lock: true
        backend_config:
           region: "us-west-1"
-          bucket: "yogi-ntt"
+          bucket: "yogi-ntt-data"
           key: terraform-test.tfstate
        #       backend_config_files:
        #       - /etc/ansible/terraform/backend.tf
