@@ -7,6 +7,7 @@
     community.general.terraform:
        project_path: 'terraform/'
        state: planned
+       check_mode: true
        plan_file: test.tfplan
        #     state_file:
        #     - https://yogi-ntt.s3.us-west-1.amazonaws.com/terraform-test.tfstate
