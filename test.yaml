@@ -44,7 +44,7 @@
        plan_file: test.tfplan
        lock: true
        state: present
-    :wq!tags:
+    tags:
       - apply
   - name: Terraform apply with Existing TF-Plan
     community.general.terraform:
