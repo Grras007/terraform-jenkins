@@ -39,4 +39,6 @@
  #     plan_file: test.tfplan
        lock: true
        state: present
+    tags:
+      - apply
      # workspace: default
