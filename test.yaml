@@ -41,7 +41,7 @@
   - name: Terraform apply
     community.general.terraform:
        project_path: 'terraform/'
-       plan_file: test.tfplan
+    #   plan_file: test.tfplan
        lock: true
        state: present
     tags:
@@ -50,7 +50,7 @@
     community.general.terraform:
        project_path: 'terraform/'
        plan_file:
-           - demo.tfplan
+           - test.tfplan
        lock: true
        state: present
     tags:
