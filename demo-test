@@ -1,0 +1,4 @@
+work: staging
+state: planned
+project: "terraform/"
+lock: true
