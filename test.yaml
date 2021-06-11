@@ -37,8 +37,7 @@
                 #  - variable            #              - /etc/ansible/terraform/variables.tf
   - name: Terraform apply
     community.general.terraform:
-       project_pat
-       h: 'terraform/'
+       project_path: 'terraform/'
  #     plan_file: test.tfplan
        lock: true
        state: present
