@@ -49,8 +49,7 @@
   - name: Terraform apply with Existing TF-Plan
     community.general.terraform:
        project_path: 'terraform/'
-       plan_file:
-           - test.tfplan
+       plan_file: test.tfplan
        lock: true
        state: present
     tags:
