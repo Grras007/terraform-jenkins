@@ -1,17 +1,20 @@
 ---
 ## Ansible Module for Terraform Testing !!
-## jenkins 
+## jenkins
 - hosts: localhost
+  vars_files:
+      - demo-test
   tasks:
   - name: Terraform Initialization
     community.general.terraform:
-       project_path: 'terraform/'
-       state: planned
+       project_path: '{{project}}'
+       state: '{{state}}'
        plan_file: test.tfplan
        #     state_file:
        #     - https://yogi-ntt.s3.us-west-1.amazonaws.com/terraform-test.tfstate
        force_init: true
-       lock: true
+       lock: '{{lock}}'
+       workspace: '{{work}}'
        backend_config:
           region: "us-west-1"
           bucket: "yogi-ntt-data"
@@ -21,7 +24,7 @@
        variables_files:
                - /etc/ansible/terraform/terraform.tfvars
     tags:
-      - init          
+      - init
 # - name: Set Variables
   # community.general.terraform:
         #  project_path: 'terraform/'
@@ -38,9 +41,9 @@
   - name: Terraform apply
     community.general.terraform:
        project_path: 'terraform/'
- #     plan_file: test.tfplan
+      # plan_file: test.tfplan
        lock: true
        state: present
+       workspace: '{{work}}'
     tags:
       - apply
-     # workspace: default
