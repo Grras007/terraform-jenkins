@@ -9,8 +9,7 @@
     community.general.terraform:
        project_path: '{{project}}'
        state: '{{state}}'
-       plan_file: 
-           - test.tfplan
+       plan_file: test.tfplan
        #     state_file:
        #     - https://yogi-ntt.s3.us-west-1.amazonaws.com/terraform-test.tfstate
        force_init: true
@@ -50,8 +49,7 @@
   - name: Terraform apply with Existing TF-Plan
     community.general.terraform:
        project_path: 'terraform/'
-       plan_file: 
-           - test.tfplan
+       plan_file: test.tfplan
        lock: true
        state: present
     tags:
