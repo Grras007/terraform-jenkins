@@ -1,4 +1,4 @@
-work: staging
+work: default
 state: planned
 project: "terraform/"
 lock: true
