@@ -1,4 +1,6 @@
 ---
+
+## ANsible
 - hosts: localhost
   tasks:
   - name: Terraform Initialization
@@ -35,7 +37,8 @@
                 #  - variable            #              - /etc/ansible/terraform/variables.tf
   - name: Terraform apply
     community.general.terraform:
-       project_path: 'terraform/'
+       project_pat
+       h: 'terraform/'
  #     plan_file: test.tfplan
        lock: true
        state: present
